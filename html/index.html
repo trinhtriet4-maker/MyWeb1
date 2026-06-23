@@ -9,76 +9,204 @@
 <body>
 
 <header class="site-header">
+
     <div class="brand">MyWeb</div>
 
-    <nav class="main-nav">
+    <!-- Bài 05 -->
+    <button id="menuToggle" class="menu-toggle">☰ Menu</button>
+
+    <nav id="mainMenu" class="main-nav">
         <a href="#about">Giới thiệu</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Liên hệ</a>
     </nav>
+
 </header>
 
 <main>
 
     <!-- HERO -->
     <section class="hero">
+
         <img src="../img/hero.jpg" alt="Nha Trang">
 
-        <h1 id="main-title">Khám Phá Nha Trang</h1>
+        <!-- Bài 02 -->
+        <h1 id="mainTitle">Khám Phá Nha Trang</h1>
 
-        <p class="lead">
+        <!-- Bài 02 -->
+        <p id="welcomeText" class="lead">
             Thành phố biển nổi tiếng với du lịch, ẩm thực và cảnh đẹp thiên nhiên.
         </p>
 
-        <a href="#portfolio" class="primary-button">Khám phá ngay</a>
+        <a href="#portfolio" class="primary-button">
+            Khám phá ngay
+        </a>
+
+        <!-- Bài 03 -->
+        <button id="helloBtn" class="primary-button">
+            Nhấn để xem lời chào
+        </button>
+
+        <p id="helloResult"></p>
+
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="about">
+
         <h2>Giới Thiệu</h2>
-        <p>
-            Nha Trang là thành phố biển nổi tiếng với cảnh đẹp và ẩm thực phong phú.
-        </p>
+
+        <!-- Bài 04 -->
+        <button id="toggleAboutBtn" class="primary-button">
+            Ẩn / Hiện nội dung
+        </button>
+
+        <div id="aboutContent">
+
+            <p>
+                Nha Trang là thành phố biển nổi tiếng với cảnh đẹp thiên nhiên,
+                các bãi biển trong xanh, khu vui chơi giải trí hiện đại và nền
+                ẩm thực đặc sắc thu hút hàng triệu du khách mỗi năm.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Bài 06 -->
+    <section class="theme-section">
+
+        <h2>Tùy Chọn Giao Diện</h2>
+
+        <select id="themeSelect">
+            <option value="">Giao diện mặc định</option>
+            <option value="dark-mode">Nền tối</option>
+            <option value="warm-mode">Nền ấm</option>
+        </select>
+
+    </section>
+
+    <!-- Bài 07 -->
+    <section class="search-section">
+
+        <h2>Tìm Kiếm Nhanh</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Nhập từ khóa..."
+        >
+
     </section>
 
     <!-- PORTFOLIO -->
     <section id="portfolio">
+
         <h2>Portfolio</h2>
+
+        <!-- Bài 08 -->
+        <div class="filter-buttons">
+
+            <button class="filter-btn" data-filter="all">
+                Tất cả
+            </button>
+
+            <button class="filter-btn" data-filter="travel">
+                Du lịch
+            </button>
+
+            <button class="filter-btn" data-filter="food">
+                Ẩm thực
+            </button>
+
+            <button class="filter-btn" data-filter="culture">
+                Văn hóa
+            </button>
+
+        </div>
 
         <div class="portfolio-grid">
 
-            <figure class="gallery-item">
+            <figure
+                class="gallery-item search-item"
+                data-category="travel">
+
                 <img src="../img/detail-1.jpg" alt="">
-                <figcaption>Trung tâm thành phố</figcaption>
+
+                <figcaption>
+                    Trung tâm thành phố
+                </figcaption>
+
             </figure>
 
-            <figure class="gallery-item">
+            <figure
+                class="gallery-item search-item"
+                data-category="food">
+
                 <img src="../img/am-thuc.jpg" alt="">
-                <figcaption>Ẩm thực</figcaption>
+
+                <figcaption>
+                    Ẩm thực Nha Trang
+                </figcaption>
+
             </figure>
 
-            <figure class="gallery-item">
+            <figure
+                class="gallery-item search-item"
+                data-category="culture">
+
                 <img src="../img/nha-tho.jpg" alt="">
-                <figcaption>Nhà thờ Đá</figcaption>
+
+                <figcaption>
+                    Nhà thờ Đá
+                </figcaption>
+
             </figure>
 
         </div>
+
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
+
         <h2>Liên Hệ</h2>
 
-        <form class="contact-form">
+        <!-- Bài 09 -->
+        <form id="contactForm" class="contact-form">
 
-            <input type="text" placeholder="Họ tên" required>
-            <input type="email" placeholder="Email" required>
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Họ tên"
+                required
+            >
 
-            <textarea rows="4" placeholder="Nội dung" required></textarea>
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+            >
 
-            <button type="submit" class="primary-button">Gửi liên hệ</button>
+            <textarea
+                rows="4"
+                placeholder="Nội dung"
+                required>
+            </textarea>
+
+            <button
+                type="submit"
+                class="primary-button">
+
+                Gửi liên hệ
+
+            </button>
+
+            <p id="formMessage"></p>
 
         </form>
+
     </section>
 
 </main>
@@ -86,6 +214,9 @@
 <footer>
     <p>© 2026 MyWeb - Du Lịch Nha Trang</p>
 </footer>
+
+<!-- Bài 00 -->
+<script src="../js/script.js"></script>
 
 </body>
 </html>
