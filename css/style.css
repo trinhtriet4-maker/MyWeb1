@@ -1,20 +1,290 @@
-.hidden{
-    display:none;
+:root {
+    --primary: #0284C7;
+    --accent: #F97316;
+    --background: #F0F9FF;
 }
 
-.dark-mode{
-    background:#111827;
-    color:white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.warm-mode{
-    background:#fff7ed;
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: #1F2937;
+    line-height: 1.6;
 }
 
-.menu-toggle{
-    cursor:pointer;
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 15px 20px;
 }
 
-.main-nav.active{
-    display:block;
+.brand {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #0284C7, #38BDF8);
+}
+
+.hero img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#mainTitle {
+    font-size: 32px;
+    color: white;
+}
+
+.lead {
+    color: white;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.primary-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.primary-button:hover {
+    opacity: 0.9;
+}
+
+.about {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+blockquote {
+    border-left: 5px solid var(--primary);
+    padding: 10px 15px;
+    margin: 20px;
+    font-style: italic;
+    background: white;
+}
+
+.theme-section,
+.search-section {
+    text-align: center;
+    padding: 20px;
+}
+
+#themeSelect {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.filter-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    opacity: 0.9;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gallery-item figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#helloResult,
+#formMessage {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu-toggle {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle:hover {
+    opacity: 0.9;
+}
+
+.dark-mode {
+    background: #111827;
+    color: #F8FAFC;
+}
+
+.dark-mode .gallery-item,
+.dark-mode blockquote,
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+    background: #1F2937;
+    color: white;
+    border-color: #374151;
+}
+
+.dark-mode footer {
+    background: #0F172A;
+}
+
+.warm-mode {
+    background: #FFF7ED;
+}
+
+.warm-mode .gallery-item {
+    background: white;
+}
+
+section {
+    padding: 30px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary);
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    .site-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #searchInput {
+        width: 95%;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
+    }
 }
